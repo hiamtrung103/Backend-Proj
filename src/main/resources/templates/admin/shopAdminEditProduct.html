@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h2>Edit product</h2>
+	<div>
+		<form th:object="${productForEdit}" th:action="@{editsave}" action="#" method="post">
+			<p th:text="*{id}">HEllo</p>
+			<input type="text" id="id" th:field="*{id}" hidden readonly/>
+		  	<label for="name">Product name</label>
+			<input type="text" id="name" th:field="*{name}" />
+			<div style="clear: both; display: block; height: 10px;"></div>
+		  	<label for="brand">Product brand</label>
+			<input type="text" id="brand" th:field="*{brand}" />
+			<div style="clear: both; display: block; height: 10px;"></div>
+		  	<label for="price">Product price</label>
+			<input type="text" id="price" th:field="*{price}" />
+			<div style="clear: both; display: block; height: 10px;"></div>
+			<input type="submit" value="Save"></input>
+		</form>
+	</div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<tr>
+<td><a href="/index">Home page</a></td>
+<td>Shop list</td>
+<td><a href="/supermarkets">Supermarkets</a></td>
+<td><a href="/products">Products</a></td>
+<td><a href="/login">Admin panel</a></td>
+</tr>
+</table>
+<br/>
+
+<table>
+		<tr>
+			<td>Product</td>
+			<td>Supermarket</td>
+			<td>Brand</td>
+			<td>Price</td>
+			<th>&nbsp;</th>
+		</tr>
+		<tr th:each = "item : ${respond}">
+			<td th:text = "${item.name}"></td>
+			<td th:text = "${item.supermarket}"></td>
+			<td th:text = "${item.brand}"></td>
+			<td th:text = "${item.price}"></td>
+			<td><a th:href="@{/remove?(iname=${item.name},ishop=${item.supermarket},(ibrand=${item.brand}),(iprice=${item.price}))}">remove item</a></td>
+		</tr>
+	</table>
+	<p th:text="${clear}"></p>
+	<p><a th:href="@{/clear}">Clear table</a></p>
+</body>
+</html>

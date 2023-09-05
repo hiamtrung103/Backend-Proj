@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Add product</title>
+</head>
+<body>
+
+<table>
+<tr>
+<td><a href="/admin/info">Shop Info</a></td>
+<td><a href="/admin/products">Products</a></td>
+<td>Add product</td>
+<td>
+<form th:action="@{/logout}" method=
+"post">
+<input type="submit" value="Sign Out"/>
+</form>
+</td>
+</tr>
+</table>
+<br/>
+
+<h2>Add product</h2>
+	<div>
+		<form th:object="${productprice}" th:action="@{save}" action="#" method="post">
+		  	<label for="name">Product name</label>
+			<input type="text" id="name" th:field="*{name}" />
+			<div style="clear: both; display: block; height: 10px;"></div>
+		  	<label for="brand">Product brand</label>
+			<input type="text" id="brand" th:field="*{brand}" />
+			<div style="clear: both; display: block; height: 10px;"></div>
+		  	<label for="price">Product price</label>
+			<input type="text" id="price" th:field="*{price}" />
+			<div style="clear: both; display: block; height: 10px;"></div>
+			<input type="submit" value="Save"></input>
+		</form>
+	</div>
+</body>
+</html>

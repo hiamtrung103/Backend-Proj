@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Supermarket info</title>
+</head>
+<body>
+
+<table>
+<tr>
+<td>Shop Info</td>
+<td><a href="/admin/products">Products</a></td>
+<td><a href="/admin/add">Add product</a></td>
+<td>
+<form th:action="@{/logout}" method=
+"post">
+<input type="submit" value="Sign Out"/>
+</form>
+</td>
+</tr>
+</table>
+<br/>
+
+<h2>Shop info</h2>
+<table>
+		<tr>
+		    <th>Name</th>
+		    <th>Group</th>
+		    <th>Manager</th>
+		    <th>Address</th>
+		    <th>Phone</th>
+		</tr>  
+    	<tr>
+    		<td th:text="${shopInfo.sName}"></td>
+    		<td th:text="${shopInfo.supGroup}"></td>
+    		<td th:text="${shopInfo.contactPerson}"></td>
+    		<td th:text="${shopInfo.address}"></td>
+    		<td th:text="${shopInfo.sPhone}"></td> 	
+    	</tr>
+     </table>
+</body>
+</html>

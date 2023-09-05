@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Product list</title>
+</head>
+<body>
+
+<table>
+<tr>
+<td><a href="/admin/info">Shop Info</a></td>
+<td>Products</td>
+<td><a href="/admin/add">Add product</a></td>
+<td>
+<form th:action="@{/logout}" method=
+"post">
+<input type="submit" value="Sign Out"/>
+</form>
+</td>
+</tr>
+</table>
+<br/>
+
+<h2>Product list</h2>
+<table>
+		<tr>
+		    <th>Product name</th>
+		    <th>Brand</th>
+		    <th>Price</th>
+		    <th>&nbsp;</th>
+		</tr>  
+    	<tr th:each = "product : ${products}">
+    		<td th:text="${product.pID.pName}"></td>
+    		<td th:text="${product.pID.pBrand}"></td>
+    		<td th:text="${product.price}"></td>
+    		<td><a th:href="@{/admin/edit/{id}(id=${product.pID.pID})}">Edit</a></td>
+    		<td><a th:href="@{/admin/delete/{id}(id=${product.pID.pID})}">Delete</a></td>
+    	</tr>
+     </table>
+</body>
+</html>

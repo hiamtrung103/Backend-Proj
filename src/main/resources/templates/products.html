@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<table>
+<tr>
+<td><a href="/index">Home page</a></td>
+<td><a href="/shoppinglist">Shop list</a></td>
+<td><a href="/supermarkets">Supermarkets</a></td>
+<td>Products</td>
+<td><a href="/login">Admin panel</a></td>
+</tr>
+</table>
+<br/>
+
+	<table>
+		<tr>
+			<td>Product</td>
+			<td>Supermarket</td>
+			<td>Brand</td>
+			<td>Price</td>
+			<th>&nbsp;</th>
+		</tr>
+		<tr th:each = "item : ${product}">
+			<td th:text = "${item.pID.pName}"></td>
+			<td th:text = "${item.sID.sName}"></td>
+			<td th:text = "${item.pID.pBrand}"></td>
+			<td th:text = "${item.price}"></td>
+			<td><a th:href="@{/add?pname={pid}&sname={sid}(pid=${item.pID.pID}, sid=${item.sID.sID})}">Add</a></td>
+		</tr>
+	</table>
+</body>
+</html>

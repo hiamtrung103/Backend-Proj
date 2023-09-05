@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<table>
+<tr>
+<td><a href="/index">Home page</a></td>
+<td><a href="/shoppinglist">Shop list</a></td>
+<td>Supermarkets</td>
+<td><a href="/products">Products</a></td>
+<td><a href="/login">Admin panel</a>l</td>
+</tr>
+</table>
+<br/>
+
+<table>
+		<tr>
+		    <th>Name</th>
+		    <th>Address</th>
+		</tr>  
+    	<tr th:each = "shop : ${supermarket}">
+    		<td th:text="${shop.sName} + ' ' + ${shop.supGroup}"></td>
+    		<td th:text="${shop.address}"></td> 	
+    	</tr>
+     </table>
+</body>
+</html>
